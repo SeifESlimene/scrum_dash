@@ -49,6 +49,8 @@ section header button:hover {
 
 section main {
   min-height: 75px;
+  box-sizing: border-box;
+  overflow: hidden;
 }
 
 section main p {

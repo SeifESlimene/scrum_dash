@@ -17,7 +17,8 @@ class Section extends Component {
   }
   allowDrop(ev) {
     ev.preventDefault();
-    if (ev.target.getAttribute("draggable") == "true") {
+    console.log(ev.target)
+    if (ev.target.getAttribute("draggable") === "true") {
       ev.dataTransfer.dropEffect = "none";
     } else {
       ev.dataTransfer.dropEffect = "all";
