@@ -8,18 +8,24 @@ class Section extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      clone: "",
+      clone: ""
     };
-    this.Drop = this.Drop.bind(this)
+    this.Drop = this.Drop.bind(this);
   }
   handleDrag(ev) {
     ev.dataTransfer.setData("text", ev.target.id);
   }
   allowDrop(ev) {
     ev.preventDefault();
+    if (ev.target.getAttribute("draggable") == "true") {
+      ev.dataTransfer.dropEffect = "none";
+    } else {
+      ev.dataTransfer.dropEffect = "all";
+    }
   }
   Drop(ev) {
     ev.preventDefault();
+    ev.stopPropagation();
     let data = ev.dataTransfer.getData("text");
     this.setState({
       clone: data
@@ -40,12 +46,16 @@ class Section extends Component {
         {this.props.title === "Story" ? (
           <main onDragOver={this.allowDrop} onDrop={this.Drop}>
             {this.props.task.map((item, index) => (
-              <Task key={index} id={`Drag${index}`}task={item} drag={this.handleDrag} />
+              <Task
+                key={index}
+                id={`Drag${index}`}
+                task={item}
+                drag={this.handleDrag}
+              />
             ))}
           </main>
         ) : (
-          <main onDragOver={this.allowDrop} onDrop={this.Drop}>
-          </main>
+          <main onDragOver={this.allowDrop} onDrop={this.Drop}></main>
         )}
       </section>
     );
