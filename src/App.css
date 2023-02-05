@@ -1,0 +1,158 @@
+/*
+*** Section
+*/
+
+.sections {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+  margin: 5px;
+}
+
+section {
+  width: 24vw;
+  border: 2px solid #f1eaea;
+  margin: 1px;
+  border-radius: 0px 0px 2px 2px;
+}
+
+section header {
+  overflow: hidden;
+  background-color: rgb(236, 235, 235);
+  height: 40px;
+  position: relative;
+  border-bottom: 2px solid rgb(204, 201, 201);
+}
+
+section header h5 {
+  margin: 0;
+  margin-left: 10px;
+  float: left;
+  line-height: 40px;
+}
+
+section header button {
+  float: right;
+  position: absolute;
+  margin-right: 5px;
+  right:0;
+  top: 20px;
+  transform: translateY(-50%);
+  width: 30px;
+  height: 30px;
+}
+
+section header button:hover {
+  cursor: pointer;
+}
+
+section main {
+  min-height: 75px;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+section main p {
+  border: 2px solid #f1eaea;
+  margin: 5px;
+  border-radius: 1px;
+  padding: 1px 5px;
+  font-size: 12px;
+}
+
+section main p:hover {
+  cursor: pointer;
+}
+
+section main p i {
+  color: rgb(255, 136, 0)
+}
+
+/*
+*** Modal
+*/
+
+.modal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgb(0, 0, 0, .5);
+  z-index: 2;
+}
+
+.box {
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  width: 200px;
+  height: 120px;
+  align-items: center;
+  justify-content: space-around;
+  box-shadow: 1px 1px 5px white;
+}
+
+.box header {
+  margin: 5px 0px;
+}
+
+.box h3 {
+  margin: 0;
+  font-size: 17px;
+}
+
+.box input {
+  border:0;
+  border-bottom: 2px solid purple;
+  padding-bottom: 3px;
+}
+
+.box input:focus {
+  border:0;
+  border-bottom: 2px solid purple;
+  outline: 0px;
+}
+
+.box footer {
+  text-align: right;
+  align-self: flex-end;
+}
+
+.box button {
+  margin: 5px;
+  background-color: transparent;
+  border: 0;
+  font-weight: bold;
+}
+
+.box button {
+  margin: 0px 3px;
+  background-color: transparent;
+  border: 0;
+  font-weight: 800;
+  text-transform: uppercase;
+  font-size: 11px;
+  padding: 5px;
+}
+
+.box button:nth-child(1) {
+  color: red;
+}
+
+.box button:nth-child(2) {
+  color: purple
+}
+
+.box button:hover {
+  background-color: rgb(236, 235, 235);
+  cursor: pointer;
+}
+
+.box button:focus {
+  outline: 0px;
+}
